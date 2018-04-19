@@ -1,0 +1,29 @@
+{
+	"name": "Ol Faithful", 
+	"renting": true, 
+	"fuel": "charcoal",
+	"price": 60,
+	" _id": 1
+}
+{
+	"name": "JohnnyCakes", 
+	"renting": false, 
+	"fuel": "gas",
+	"price": 150,
+	" _id": 2
+}
+
+
+
+{
+	"name": "3’x3’ Grass Turf", 
+	"type": "rent",
+	"price": 25,
+	"_id": 75
+}
+{
+	"name": "BBQ Condiments",
+	"type": "purchase",
+	"price": 15,
+	"_id": 76
+}
