@@ -40,5 +40,50 @@ module.exports = {
 			return res.status(200).send(grill)
 		})
 		.catch(error => res.status(400).send(error))
+	},
+	update(req, res){
+		return Grill
+		.findById(req.params.id)
+		.then(grill => {
+			if(!grill){
+				return res.status(404).send({
+					message: "Grill not found to update."
+				})
+			}
+			return grill
+			.update(req.body, {fields: Object.keys(req.body)})
+			.then(() => res.status(200).send(grill))
+			.catch((error) => res.status(400).send(error))
+		})
+		.catch((error) => res.status(400).send(error))
+	},
+	destroy(req, res){
+		return Grill
+		.findById(req.params.id)
+		.then(grill => {
+			if(!grill){
+				return res.status(400).send({
+					message: "Grill could not be found to delete"
+				})
+			}
+			return grill
+			.destroy()
+			.then(() => res.status(204).send())
+			.catch(error => res.status(400).send(error))
+		})
+		.catch(error => res.status(400).send(error))
 	}
 }
+
+// name: req.body.name || grill.name,
+// brand: req.body.brand || grill.brand,
+// serial_number: req.body.serial_number || grill.serial_number,
+// fuel_id: req.body.fuel_id || grill.fuel_id,
+// rate_daily: req.body.rate_daily || grill.rate_daily,
+// rate_hourly: req.body.rate_hourly || grill.rate_hourly,
+// condition: req.body.condition || grill.condition,
+// renting: req.body.renting || grill.renting,
+// purchase_date: req.body.purchase_date || grill.purchase_date,
+// serves: req.body.serves || grill.serves,
+// image1: req.body.image1 || grill.image1,
+// image2: req.body.image2 || grill.image2
