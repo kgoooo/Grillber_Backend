@@ -17,7 +17,6 @@ module.exports = {
 				image1: req.body.image1,
 				image2: req.body.image2,
 			})
-			
 			.then(grill => res.status(201).send(grill))
 			.catch(error => res.status(400).send(error))
 	},
@@ -74,16 +73,3 @@ module.exports = {
 		.catch(error => res.status(400).send(error))
 	}
 }
-
-// name: req.body.name || grill.name,
-// brand: req.body.brand || grill.brand,
-// serial_number: req.body.serial_number || grill.serial_number,
-// fuel_id: req.body.fuel_id || grill.fuel_id,
-// rate_daily: req.body.rate_daily || grill.rate_daily,
-// rate_hourly: req.body.rate_hourly || grill.rate_hourly,
-// condition: req.body.condition || grill.condition,
-// renting: req.body.renting || grill.renting,
-// purchase_date: req.body.purchase_date || grill.purchase_date,
-// serves: req.body.serves || grill.serves,
-// image1: req.body.image1 || grill.image1,
-// image2: req.body.image2 || grill.image2

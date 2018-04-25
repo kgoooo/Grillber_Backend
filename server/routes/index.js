@@ -1,5 +1,6 @@
 const grillsController = require('../controllers').grills;
 const usersController = require('../controllers').users;
+const accessoriesController = require('../controllers').accessories
 
 module.exports = (app) => {
 	app.get('/api', (req, res) => res.status(200).send({
@@ -17,4 +18,10 @@ module.exports = (app) => {
 	app.get('/api/users/:id', usersController.retrieve)
 	app.put('/api/users/:id', usersController.update)
 	app.delete('/api/users/:id', usersController.destroy)
+
+	app.post("/api/accessories", accessoriesController.create);
+	app.get("/api/accessories", accessoriesController.list);
+	app.get("/api/accessories/:id", accessoriesController.retrieve);
+	app.put("/api/accessories/:id", accessoriesController.update);
+	app.delete("/api/accessories/:id", accessoriesController.destroy);
 }
