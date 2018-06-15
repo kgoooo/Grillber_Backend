@@ -16,6 +16,7 @@ module.exports = {
 				serves: req.body.serves,
 				image1: req.body.image1,
 				image2: req.body.image2,
+				description: req.body.description
 			})
 			.then(grill => res.status(201).send(grill))
 			.catch(error => res.status(400).send(error))
@@ -72,4 +73,4 @@ module.exports = {
 		})
 		.catch(error => res.status(400).send(error))
 	}
-}
+};

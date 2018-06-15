@@ -1,12 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Grill = sequelize.define('Grill', {
-    // id: {
-    //   allowNull: false,
-    //   autoIncrement: true,
-    //   primaryKey: true,
-    //   type: DataTypes.INTEGER
-    // },
     name: {
       type: DataTypes.STRING,
       allowNull: false
@@ -48,11 +42,15 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     image1: {
-      type:DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: true
     },
     image2: {
-      type:DataTypes.STRING,
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
       allowNull: true
     }
   }, {});
